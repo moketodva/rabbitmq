@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    listener:
+      simple:
+        acknowledge-mode: manual
+        max-concurrency: 9
+        concurrency: 1
+        retry:
+          enabled: true
+          initial-interval: 3000ms
+          max-attempts: 8
+        prefetch: 1000
+        default-requeue-rejected: true
